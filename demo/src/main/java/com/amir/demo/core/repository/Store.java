@@ -13,10 +13,14 @@ import com.amir.demo.core.model.WordResponse;
 @Component
 public class Store {
 
-	private final Map<String, List<String>> map = new HashMap<>();
+	private Map<String, List<String>> map = new HashMap<>();
 
 	public void addWord(WordRequest word) {
 		map.put(word.getWord(), word.getSynonyms());
+	}
+
+	public void deleteAll() {
+		map = new HashMap<>();
 	}
 
 	public List<WordResponse> getAll() {

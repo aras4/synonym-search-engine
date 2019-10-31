@@ -33,4 +33,11 @@ public interface SynonymService {
 	 */
 	PayloadResponse<List<String>> search(WordRequest request);
 
+	/**
+	 * Delete all synonyms. <br>
+	 * 
+	 * @return {@link PayloadResponse} message of {@link String}.
+	 */
+	PayloadResponse<String> delete();
+
 }

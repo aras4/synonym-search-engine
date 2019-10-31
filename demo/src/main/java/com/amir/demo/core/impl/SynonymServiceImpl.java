@@ -44,4 +44,11 @@ public class SynonymServiceImpl implements SynonymService {
 		return new PayloadResponse<>(ResponseCode.SUCCESSFUL, response);
 	}
 
+	@Override
+	public PayloadResponse<String> delete() {
+		log.info("Delete all words");
+		store.deleteAll();
+		return new PayloadResponse<>(ResponseCode.SUCCESSFUL, "Successfully removed all");
+	}
+
 }
