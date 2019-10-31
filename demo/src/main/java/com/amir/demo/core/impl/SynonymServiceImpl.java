@@ -37,4 +37,11 @@ public class SynonymServiceImpl implements SynonymService {
 		return new PayloadResponse<>(ResponseCode.SUCCESSFUL, "New Word successfully added");
 	}
 
+	@Override
+	public PayloadResponse<List<String>> search(WordRequest request) {
+		log.info("Search for synonyms");
+		final List<String> response = store.search(request.getWord());
+		return new PayloadResponse<>(ResponseCode.SUCCESSFUL, response);
+	}
+
 }

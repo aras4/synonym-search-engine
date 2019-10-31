@@ -25,4 +25,12 @@ public interface SynonymService {
 	 */
 	PayloadResponse<String> save(WordRequest word);
 
+	/**
+	 * Retrieve all synonyms for given word {@link String}. <br>
+	 * 
+	 * @return {@link PayloadResponse} holding all words with synonyms
+	 *         {@link WordResponse}.
+	 */
+	PayloadResponse<List<String>> search(WordRequest request);
+
 }

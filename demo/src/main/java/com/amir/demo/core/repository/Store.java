@@ -25,4 +25,29 @@ public class Store {
 		return all;
 	}
 
+	public List<String> search(String word) {
+		final List<String> synonyms = new ArrayList<>();
+		synonyms.addAll(getValues(word));
+		synonyms.addAll(getByValues(word));
+		synonyms.remove(word);
+		return synonyms;
+	}
+
+	public List<String> getValues(String key) {
+		return map.getOrDefault(key, new ArrayList<>());
+	}
+
+	public List<String> getByValues(String key) {
+		final List<String> values = new ArrayList<>();
+		map.entrySet().stream().filter(entry -> contains(key, entry.getValue())).forEach(m -> {
+			values.add(m.getKey());
+			values.addAll(m.getValue());
+		});
+		return values;
+	}
+
+	public boolean contains(String s, List<String> l) {
+		return l.stream().anyMatch(x -> x.equals(s));
+	}
+
 }

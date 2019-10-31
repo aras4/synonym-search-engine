@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,6 +41,13 @@ public class SynonymRest {
 	@PostMapping(value = "/word")
 	public PayloadResponse<String> save(@RequestBody WordRequest request) {
 		return synonymService.save(request);
+	}
+
+	@ApiOperation(value = "Search for words and their synonyms", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/search/{word}")
+	public PayloadResponse<List<String>> search(@PathVariable String word) {
+		final WordRequest request = WordRequest.builder().word(word).build();
+		return synonymService.search(request);
 	}
 
 }
