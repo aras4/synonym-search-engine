@@ -1,9 +1,9 @@
 package com.amir.demo.core.repository;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.springframework.stereotype.Repository;
 
@@ -13,14 +13,14 @@ import com.amir.demo.core.model.WordResponse;
 @Repository
 public class Store {
 
-	private Map<String, List<String>> map = new HashMap<>();
+	private Map<String, List<String>> map = new ConcurrentHashMap<>();
 
 	public void addWord(WordRequest word) {
 		map.put(word.getWord(), word.getSynonyms());
 	}
 
 	public void deleteAll() {
-		map = new HashMap<>();
+		map = new ConcurrentHashMap<>();
 	}
 
 	public List<WordResponse> getAll() {
@@ -29,7 +29,7 @@ public class Store {
 		return all;
 	}
 
-	public List<String> search(String word) {
+	public  List<String> search(String word) {
 		final List<String> synonyms = new ArrayList<>();
 		synonyms.addAll(getValues(word));
 		synonyms.addAll(getByValues(word));
