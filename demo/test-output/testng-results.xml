@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="4" passed="4">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="71" started-at="2019-11-03T11:00:25Z" finished-at="2019-11-03T11:00:25Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="71" started-at="2019-11-03T11:00:25Z" finished-at="2019-11-03T11:00:25Z">
+      <class name="com.amir.demo.core.impl.SynonymServiceImplTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.amir.demo.core.impl.SynonymServiceImplTest@68c4039c]" name="setUp" is-config="true" duration-ms="629" started-at="2019-11-03T11:00:25Z" finished-at="2019-11-03T11:00:25Z">
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="delete()[pri:0, instance:com.amir.demo.core.impl.SynonymServiceImplTest@68c4039c]" name="delete" duration-ms="32" started-at="2019-11-03T11:00:25Z" finished-at="2019-11-03T11:00:25Z">
+        </test-method> <!-- delete -->
+        <test-method status="PASS" signature="getAll()[pri:0, instance:com.amir.demo.core.impl.SynonymServiceImplTest@68c4039c]" name="getAll" duration-ms="12" started-at="2019-11-03T11:00:25Z" finished-at="2019-11-03T11:00:25Z">
+        </test-method> <!-- getAll -->
+        <test-method status="PASS" signature="save()[pri:0, instance:com.amir.demo.core.impl.SynonymServiceImplTest@68c4039c]" name="save" duration-ms="6" started-at="2019-11-03T11:00:25Z" finished-at="2019-11-03T11:00:25Z">
+        </test-method> <!-- save -->
+        <test-method status="PASS" signature="search()[pri:0, instance:com.amir.demo.core.impl.SynonymServiceImplTest@68c4039c]" name="search" duration-ms="4" started-at="2019-11-03T11:00:25Z" finished-at="2019-11-03T11:00:25Z">
+        </test-method> <!-- search -->
+      </class> <!-- com.amir.demo.core.impl.SynonymServiceImplTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

@@ -5,12 +5,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import com.amir.demo.core.model.WordRequest;
 import com.amir.demo.core.model.WordResponse;
 
-@Component
+@Repository
 public class Store {
 
 	private Map<String, List<String>> map = new HashMap<>();
